@@ -40,7 +40,7 @@ public interface ExpressionAlgebra<A> {
 }
 ```
 
-## Definition of a first semantic
+## Definition of a first semantic: Evaluate
 
 ![First semantic](./figures/first-semantic.dot.png)
 
@@ -153,6 +153,41 @@ public interface ExpressionExtendedEvaluate extends ExpressionEvaluate, Expressi
 				return $(multiply.getLeft()).evaluate() * $(multiply.getRight()).evaluate();
 			}
 		};
+	}
+}
+```
+
+## Definition of a second semantic: Print
+
+Here is an example of the integration of a second operation `print`. Following what we have done so far, the operation of straightforward, we just have to define a new kind of operation with the `PrintOperation` interface and inherits from our algebra.
+
+You can also observe that even if we have defined our semantic using the "extended" model, we are still able to use our semantic with a model defined using only elements from our first model. 
+
+```java
+package expression.extended.print;
+
+import java.text.MessageFormat;
+
+import expression.Constant;
+import expression.Sum;
+import expression_extended.Multiply;
+import expression_extended.algebra.Expression_extendedAlgebra;
+
+public interface ExpressionExtendedPrint extends Expression_extendedAlgebra<PrintOperation> {
+
+	@Override
+	default PrintOperation constant(Constant constant) {
+		return () -> String.valueOf(constant.getValue());
+	}
+
+	@Override
+	default PrintOperation sum(Sum sum) {
+		return () -> MessageFormat.format("({0} + {1})", $(sum.getLeft()).print(), $(sum.getRight()).print());
+	}
+
+	@Override
+	default PrintOperation multiply(Multiply multiply) {
+		return () -> MessageFormat.format("{0} * {1}", $(multiply.getLeft()).print(), $(multiply.getRight()).print());
 	}
 }
 ```
