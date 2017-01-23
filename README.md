@@ -42,7 +42,7 @@ public interface ExpressionAlgebra<A> {
 
 ![First semantic](./figures/first-semantic.dot.png)
 
-1. Definition of a concret interface of the abstract type `A`
+Definition of a concret interface of the abstract type `A`.
 
 ```java
 package expression.evaluate;
@@ -52,7 +52,12 @@ public interface EvaluateOperation {
 }
 ```
 
-2. Integration of the `EvaluateOperation` on an implementation of the abstract algebra
+Integration of the `EvaluateOperation` on an implementation of the abstract algebra.
+Each element of the mete-model must return an implementation of the concrete semantic of the object algebra, modelized by an interface.
+
+In order to step into the semantic of a related part of the model, the `$` method is used.
+
+For instance l.24 the `sum` semantic delegates the evaluation of the `left` and `right` sub-part of the expression the each of them respectively and then proceed to the sum of both results.
 
 ```java
 package expression.evaluate;
