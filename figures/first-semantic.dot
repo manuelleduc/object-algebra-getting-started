@@ -1,0 +1,22 @@
+digraph Couriers {
+//fontname = "Bitstream Vera Sans"
+//fontsize = 8
+
+node [
+//fontname = "Bitstream Vera Sans"
+//fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+]
+
+AOA [ label = "Abstract Object Algebra" ]
+
+FistSemantic [
+label = "First semantic"
+]
+
+AOA ->  FistSemantic [dir=back]
+}
