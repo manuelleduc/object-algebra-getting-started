@@ -161,7 +161,7 @@ public interface ExpressionExtendedEvaluate extends ExpressionEvaluate, Expressi
 
 Here is an example of the integration of a second operation `print`. Following what we have done so far, the operation of straightforward, we just have to define a new kind of operation with the `PrintOperation` interface and inherits from our algebra.
 
-You can also observe that even if we have defined our semantic using the "extended" model, we are still able to use our semantic with a model defined using only elements from our first model. 
+You can also observe that even if we have defined our semantic using the "extended" model, we are still able to use our semantic with a model defined using only elements from our first model.	 
 
 ```java
 package expression.extended.print;
@@ -191,4 +191,14 @@ public interface ExpressionExtendedPrint extends Expression_extendedAlgebra<Prin
 	}
 }
 ```
+
+## Summary of the projects
+
+| Project                                  | Description                              |
+| ---------------------------------------- | ---------------------------------------- |
+| [expression.model](./expression.model)   | Base model (const, +)                    |
+| [expression.evaluate](./expression.evaluate) | Evaluation semantic based on the base model |
+| [expression-extended.model](./expression-extended.model) | Extended model (\*)                      |
+| [expression-extended.evaluate](./expression-extended.evaluate) | Evaluation semantic based on the extended model |
+| [expression-extended.print](./expression-extended.print) | Print semantic based on the extended model |
 
