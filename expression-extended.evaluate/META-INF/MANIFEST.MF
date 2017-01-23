@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Evaluate
+Bundle-SymbolicName: expression-extended.evaluate
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: expression.evaluate,
+ expression-extended.model

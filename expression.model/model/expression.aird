@@ -3,6 +3,8 @@
   <viewpoint:DAnalysis xmi:id="_aK5AIOGMEeaO4YFbj8WrrA" selectedViews="_aNj5oOGMEeaO4YFbj8WrrA" version="11.1.0.201608251200">
     <semanticResources>expression.ecore</semanticResources>
     <semanticResources>expression.genmodel</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>http://org.emftools.emf2gv.graphdesc/1.1.0</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_aNj5oOGMEeaO4YFbj8WrrA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_aTh-wOGMEeaO4YFbj8WrrA" name="expression" representation="_aTil0OGMEeaO4YFbj8WrrA">

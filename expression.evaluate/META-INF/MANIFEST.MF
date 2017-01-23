@@ -4,3 +4,4 @@ Bundle-Name: Evaluate
 Bundle-SymbolicName: expression.evaluate
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: expression.model;bundle-version="0.1.0"
+Export-Package: expression.evaluate

@@ -3,6 +3,8 @@ A simple guide to deal with Object Algebras and EMF
 
 ## Definition of the initial meta-model
 
+![expression model](./figures/expression.png)
+
 1. Defining a ecore model ([expression.ecore](./expression.model/model/expression.ecore))
 2. Generating the EMF Java sources from the model
 3. Generating the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra)
@@ -92,4 +94,66 @@ public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation>
 ```
 
 
+
+## Extension of the original model
+
+In this part we'll add a multiplication expression :
+
+ ![expression extended model](./figures/expression_extended.png)
+
+The exact same steps are needed to generate the EMF and Object Algebra source code. The resulting java source should looks like this :
+
+```java
+package expression_extended.algebra;
+
+import expression.Expression;
+import expression.algebra.ExpressionAlgebra;
+import expression_extended.Multiply;
+
+public interface Expression_extendedAlgebra<A> extends ExpressionAlgebra<A> {
+
+	A multiply(final Multiply multiply);
+
+	public default A $(final Expression expression) {
+		final A ret;
+		if (expression.eClass().getName().equals("Multiply")) {
+			ret = this.multiply((Multiply) expression);
+		} else {
+			ret = ExpressionAlgebra.super.$(expression);
+		}
+		return ret;
+	}
+}
+```
+
+Inheritance to the cross-referenced original model is deal with by the object algebra generator.
+
+## Definition of the second semantic
+
+![Second semantic](./figures/extended-semantic.dot.png)
+
+The new semantic is going to reuse everything we defined previously as is. The only thing needed is the definition of the semantic of the `Multiply` operation.
+
+```java
+package expression.extended.evaluate;
+
+import expression.evaluate.EvaluateOperation;
+import expression.evaluate.ExpressionEvaluate;
+import expression_extended.Multiply;
+import expression_extended.algebra.Expression_extendedAlgebra;
+
+public interface ExpressionExtendedEvaluate extends ExpressionEvaluate, Expression_extendedAlgebra<EvaluateOperation> {
+
+	@Override
+	default EvaluateOperation multiply(Multiply multiply) {
+		return new EvaluateOperation() {
+
+			@Override
+			public int evaluate() {
+				return $(multiply.getLeft()).evaluate() * $(multiply.getRight()).evaluate();
+			}
+		};
+	}
+}
+```
 

@@ -1,7 +1,6 @@
 package expression.evaluate;
 
-import expression.Constant;
-import expression.Sum;
+import expression.*;
 import expression.algebra.ExpressionAlgebra;
 
 public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation> {

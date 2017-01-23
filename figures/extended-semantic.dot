@@ -14,9 +14,16 @@ arrowtail = "empty"
 
 AOA [ label = "Abstract Object Algebra" ]
 
+EAOA [ label = "Extended Abstract Object Algebra"]
+
+SS [ label = "Second semantic"]
+
 FirstSemantic [
 label = "First semantic"
 ]
 
 AOA ->  FirstSemantic [dir=back]
+AOA -> EAOA [dir=back]
+EAOA -> SS [dir=back]
+FirstSemantic -> SS [dir=back]
 }

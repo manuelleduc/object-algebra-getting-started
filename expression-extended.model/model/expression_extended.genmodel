@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/expression-extended.evaluate/src" modelPluginID="expression-extended.evaluate"
+    modelName="Expression_extended" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>expression_extended.ecore</foreignModel>
+  <genPackages prefix="Expression_extended" disposableProviderFactory="true" ecorePackage="expression_extended.ecore#/">
+    <genClasses ecoreClass="expression_extended.ecore#//Multiply">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression_extended.ecore#//Multiply/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression_extended.ecore#//Multiply/left"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Expression" ecorePackage="../../expression.model/model/expression.ecore#/">
+    <genClasses image="false" ecoreClass="../../expression.model/model/expression.ecore#//Expression"/>
+    <genClasses ecoreClass="../../expression.model/model/expression.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../expression.model/model/expression.ecore#//Constant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="../../expression.model/model/expression.ecore#//Sum">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../expression.model/model/expression.ecore#//Sum/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../expression.model/model/expression.ecore#//Sum/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
