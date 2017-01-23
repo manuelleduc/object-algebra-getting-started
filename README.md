@@ -1,17 +1,15 @@
 # Object Algebra: Getting Started
 A simple guide to deal with Object Algebras and EMF
 
-## Definition of the initial meta-model
+## Definition of the initial metamodel
 
 ![expression model](./figures/expression.png)
 
-1. Defining a ecore model ([expression.ecore](./expression.model/model/expression.ecore))
-2. Generating the EMF Java sources from the model
-3. Generating the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra)
+1. Definition of an Ecore model ([expression.ecore](./expression.model/model/expression.ecore))
+2. Generation the EMF Java sources from the model
+3. Generation the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra). 
 
-The result is an interface defining the abstract object algebra.
-
-For every element with no parent (with an implicit single inheritance to EObject), a type parameter is generated. Here `A` is generated for Expression and its hierarchy.
+The last step results in an interface defining the abstract object algebra. For every element with no parent (with an implicit single inheritance to EObject), a type parameter is generated. Here `A` is generated for Expression and its hierarchy.
 
 ```java
 package expression.algebra;
@@ -44,7 +42,7 @@ public interface ExpressionAlgebra<A> {
 
 ![First semantic](./figures/first-semantic.dot.png)
 
-Definition of a concret interface of the abstract type `A`.
+Definition of a concrete interface of the abstract type `A`.
 
 ```java
 package expression.evaluate;
@@ -55,11 +53,11 @@ public interface EvaluateOperation {
 ```
 
 Integration of the `EvaluateOperation` on an implementation of the abstract algebra.
-Each element of the mete-model must return an implementation of the concrete semantic of the object algebra, modelized by an interface.
+Each element of the metamodel must return an implementation of the concrete semantic of the object algebra, modelized by an interface.
 
-In order to step into the semantic of a related part of the model, the `$` method is used.
+In order to step into the semantics of a related part of the model, the `$` method is used.
 
-For instance l.24 the `sum` semantic delegates the evaluation of the `left` and `right` sub-part of the expression the each of them respectively and then proceed to the sum of both results.
+For instance l.24 the `sum` semantics delegates the evaluation of the `left` and `right` sub-part of the expression the each of them respectively and then proceed to the sum of both results.
 
 ```java
 package expression.evaluate;
@@ -97,7 +95,7 @@ public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation>
 
 ## Extension of the original model
 
-In this part we'll add a multiplication expression :
+In this part we will add a multiplication expression:
 
  ![expression extended model](./figures/expression_extended.png)
 
@@ -157,11 +155,11 @@ public interface ExpressionExtendedEvaluate extends ExpressionEvaluate, Expressi
 }
 ```
 
-## Definition of a second semantic: Print
+## Definition of a second semantics: Print
 
-Here is an example of the integration of a second operation `print`. Following what we have done so far, the operation of straightforward, we just have to define a new kind of operation with the `PrintOperation` interface and inherits from our algebra.
+Here is an example of the integration of a second operation `print`. Following what we have done so far, we just have to define a new kind of operation with the `PrintOperation` interface and inherits from our algebra.
 
-You can also observe that even if we have defined our semantic using the "extended" model, we are still able to use our semantic with a model defined using only elements from our first model.	 
+You can also observe that even if we have defined our semantics using the "extended" model, we are still able to use our semantics with a model defined using only elements from our first model.	 
 
 ```java
 package expression.extended.print;
