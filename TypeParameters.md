@@ -10,12 +10,12 @@ The following rules are expressed in term of EMF vocabulary but can easily be po
 
 In a given model, a type parameter root is defined for each EClass directly defined in the model (e.g. not for the cross-referenced elements) with either:
 
-- No explicit parent (e.g. a single implicit inheritance to E)
-- Explicitly annotated with `OARoot` . 
+- No explicit parent (e.g. a single implicit inheritance to EObject)
+- Explicitly annotated with `OARoot`. 
 
 Every children of a type parameter root inherits from the same type parameter in the generated Object Algebra.
 
-If a given EClass inherits from two roots, the model is ambiguous and no object algebra can be defined.
+If a given EClass inherits from two roots, the model is **ambiguous** and no object algebra can be defined.
 
 Two solutions can be considered :
 
