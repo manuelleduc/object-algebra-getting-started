@@ -7,9 +7,11 @@ A simple guide to deal with Object Algebras and EMF
 
 1. Definition of an Ecore model ([expression.ecore](./expression.model/model/expression.ecore))
 2. Generation the EMF Java sources from the model
-3. Generation the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra). 
+3. Generation of the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra). 
 
-The last step results in an interface defining the abstract object algebra. For every element with no parent (with an implicit single inheritance to EObject), a type parameter is generated. Here `A` is generated for Expression and its hierarchy.
+The last step results in an interface defining the abstract object algebra. For every element with no parent (with an implicit single inheritance to EObject), a type parameter is generated. For more details: [TypeParameters.md](./TypeParameters.md)
+
+Here `A` is generated for Expression and its hierarchy.
 
 ```java
 package expression.algebra;
