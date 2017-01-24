@@ -61,6 +61,8 @@ In order to step into the semantics of a related part of the model, the `$` meth
 
 For instance l.24 the `sum` semantics delegates the evaluation of the `left` and `right` sub-part of the expression the each of them respectively and then proceed to the sum of both results.
 
+For more details about the `$` methods: [Dollars.md](./Dollars.md)
+
 ```java
 package expression.evaluate;
 
