@@ -1,16 +1,16 @@
 package expression.extended.print.xtend
 
-import expression_extended.algebra.Expression_extendedAlgebra
+import expression.Add
 import expression.Constant
-import expression.Sum
 import expression_extended.Multiply
+import expression_extended.algebra.Expression_extendedAlgebra
 
 interface ExpressionExtendedPrintXtend extends Expression_extendedAlgebra<PrintOperationXtend> {
 	override def constant(Constant const) {
 		['''«const.value»''']
 	}
 
-	override def sum(Sum sum) {
+	override def add(Add sum) {
 		['''(«$(sum.left).print» + «$(sum.right).print»)''']
 	}
 

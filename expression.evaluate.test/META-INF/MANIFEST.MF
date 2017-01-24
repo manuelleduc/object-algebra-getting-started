@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: expression.evaluate.test
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore.xmi,
+ expression.evaluate,
+ expression.model;bundle-version="0.1.0",
+ org.junit;bundle-version="4.12.0"

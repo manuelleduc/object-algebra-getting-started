@@ -1,8 +1,8 @@
 package expression.extended.print.xtend;
 
+import expression.Add;
 import expression.Constant;
 import expression.Expression;
-import expression.Sum;
 import expression.extended.print.xtend.PrintOperationXtend;
 import expression_extended.Multiply;
 import expression_extended.algebra.Expression_extendedAlgebra;
@@ -22,7 +22,7 @@ public interface ExpressionExtendedPrintXtend extends Expression_extendedAlgebra
   }
   
   @Override
-  public default PrintOperationXtend sum(final Sum sum) {
+  public default PrintOperationXtend add(final Add sum) {
     final PrintOperationXtend _function = () -> {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(");

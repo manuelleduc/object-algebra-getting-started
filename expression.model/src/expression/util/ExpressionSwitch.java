@@ -79,10 +79,10 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionPackage.SUM: {
-				Sum sum = (Sum)theEObject;
-				T result = caseSum(sum);
-				if (result == null) result = caseExpression(sum);
+			case ExpressionPackage.ADD: {
+				Add add = (Add)theEObject;
+				T result = caseAdd(add);
+				if (result == null) result = caseExpression(add);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -121,17 +121,17 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sum</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Add</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sum</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Add</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSum(Sum object) {
+	public T caseAdd(Add object) {
 		return null;
 	}
 

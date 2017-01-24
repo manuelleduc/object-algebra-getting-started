@@ -2,12 +2,11 @@
  */
 package expression.impl;
 
+import expression.Add;
 import expression.Constant;
 import expression.Expression;
 import expression.ExpressionFactory;
 import expression.ExpressionPackage;
-import expression.Sum;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -41,7 +40,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sumEClass = null;
+	private EClass addEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -136,8 +135,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSum() {
-		return sumEClass;
+	public EClass getAdd() {
+		return addEClass;
 	}
 
 	/**
@@ -145,8 +144,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSum_Left() {
-		return (EReference)sumEClass.getEStructuralFeatures().get(0);
+	public EReference getAdd_Left() {
+		return (EReference)addEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -154,8 +153,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSum_Right() {
-		return (EReference)sumEClass.getEStructuralFeatures().get(1);
+	public EReference getAdd_Right() {
+		return (EReference)addEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -191,9 +190,9 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		constantEClass = createEClass(CONSTANT);
 		createEAttribute(constantEClass, CONSTANT__VALUE);
 
-		sumEClass = createEClass(SUM);
-		createEReference(sumEClass, SUM__LEFT);
-		createEReference(sumEClass, SUM__RIGHT);
+		addEClass = createEClass(ADD);
+		createEReference(addEClass, ADD__LEFT);
+		createEReference(addEClass, ADD__RIGHT);
 	}
 
 	/**
@@ -225,17 +224,17 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Add supertypes to classes
 		constantEClass.getESuperTypes().add(this.getExpression());
-		sumEClass.getESuperTypes().add(this.getExpression());
+		addEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sumEClass, Sum.class, "Sum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSum_Left(), this.getExpression(), null, "left", null, 1, 1, Sum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSum_Right(), this.getExpression(), null, "right", null, 1, 1, Sum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(addEClass, Add.class, "Add", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAdd_Left(), this.getExpression(), null, "left", null, 1, 1, Add.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAdd_Right(), this.getExpression(), null, "right", null, 1, 1, Add.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

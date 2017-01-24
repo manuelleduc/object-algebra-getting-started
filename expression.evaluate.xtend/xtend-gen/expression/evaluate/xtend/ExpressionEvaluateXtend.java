@@ -1,8 +1,8 @@
 package expression.evaluate.xtend;
 
+import expression.Add;
 import expression.Constant;
 import expression.Expression;
-import expression.Sum;
 import expression.algebra.ExpressionAlgebra;
 import expression.evaluate.xtend.EvaluateOperationXtend;
 
@@ -17,7 +17,7 @@ public interface ExpressionEvaluateXtend extends ExpressionAlgebra<EvaluateOpera
   }
   
   @Override
-  public default EvaluateOperationXtend sum(final Sum sum) {
+  public default EvaluateOperationXtend add(final Add sum) {
     final EvaluateOperationXtend _function = () -> {
       Expression _left = sum.getLeft();
       EvaluateOperationXtend _$ = this.$(_left);

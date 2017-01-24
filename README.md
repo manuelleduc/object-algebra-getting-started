@@ -7,7 +7,7 @@ A simple guide to deal with Object Algebras and EMF
 
 1. Definition of an Ecore model ([expression.ecore](./expression.model/model/expression.ecore))
 2. Generation the EMF Java sources from the model
-3. Generation of the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra). 
+3. Generation of the algebra from the model (right click on the .ecore file -> Object Algebra -> Generate Object Algebra).
 
 The last step results in an interface defining the abstract object algebra. For every element with no parent (with an implicit single inheritance to EObject), a type parameter is generated. For more details: [TypeParameters.md](./TypeParameters.md)
 
@@ -16,35 +16,33 @@ Here `A` is generated for Expression and its hierarchy.
 ```java
 package expression.algebra;
 
+import expression.Add;
 import expression.Constant;
 import expression.Expression;
-import expression.Sum;
 
 public interface ExpressionAlgebra<A> {
 
 	A constant(final Constant constant);
 
-	A sum(final Sum sum);
+	A add(final Add sum);
 
-	public default A $(final Expression expression) {
-		final A ret;
-		if (expression.eClass().getName().equals("Constant")) {
-			ret = this.constant((Constant) expression);
-		} else if (expression.eClass().getName().equals("Sum")) {
-			ret = this.sum((Sum) expression);
+	default A $(final Expression expression) {
+		if (expression instanceof Constant) {
+			return this.constant((Constant) expression);
+		} else if (expression instanceof Add) {
+			return this.add((Add) expression);
 		} else {
 			throw new RuntimeException("Unknow Expression " + expression);
 		}
-		return ret;
 	}
 }
 ```
 
-## Definition of a first semantic: Evaluate
+## Definition of a first semantics: Evaluate
 
-![First semantic](./figures/first-semantic.dot.png)
+![First semantics](./figures/first-semantics.dot.png)
 
-Definition of a concrete interface of the abstract type `A`.
+Definition of a semantic type for the semantic type parameter `A`.
 
 ```java
 package expression.evaluate;
@@ -55,7 +53,7 @@ public interface EvaluateOperation {
 ```
 
 Integration of the `EvaluateOperation` on an implementation of the abstract algebra.
-Each element of the metamodel must return an implementation of the concrete semantic of the object algebra, modelized by an interface.
+Each element of the metamodel must return an implementation of the semantic type of the object algebra, modelized by an interface.
 
 In order to step into the semantics of a related part of the model, the `$` method is used.
 
@@ -66,7 +64,8 @@ For more details about the `$` methods: [Dollars.md](./Dollars.md)
 ```java
 package expression.evaluate;
 
-import expression.*;
+import expression.Add;
+import expression.Constant;
 import expression.algebra.ExpressionAlgebra;
 
 public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation> {
@@ -82,7 +81,7 @@ public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation>
 	}
 
 	@Override
-	default EvaluateOperation sum(final Sum sum) {
+	default EvaluateOperation add(final Add sum) {
 		return new EvaluateOperation() {
 
 			@Override
@@ -91,7 +90,6 @@ public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation>
 			}
 		};
 	}
-
 }
 ```
 
@@ -116,25 +114,23 @@ public interface Expression_extendedAlgebra<A> extends ExpressionAlgebra<A> {
 
 	A multiply(final Multiply multiply);
 
-	public default A $(final Expression expression) {
-		final A ret;
-		if (expression.eClass().getName().equals("Multiply")) {
-			ret = this.multiply((Multiply) expression);
+	default A $(final Expression expression) {
+		if (expression instanceof Multiply) {
+			return this.multiply((Multiply) expression);
 		} else {
-			ret = ExpressionAlgebra.super.$(expression);
+			return ExpressionAlgebra.super.$(expression);
 		}
-		return ret;
 	}
 }
 ```
 
 Inheritance to the cross-referenced original model is deal with by the object algebra generator.
 
-## Definition of the second semantic
+## Definition of the extended semantics
 
-![Second semantic](./figures/extended-semantic.dot.png)
+![Second semantics](./figures/extended-semantics.dot.png)
 
-The new semantic is going to reuse everything we defined previously as is. The only thing needed is the definition of the semantic of the `Multiply` operation.
+The new semantics is going to reuse everything we defined previously as is. The only thing needed is the definition of the semantics of the `Multiply` operation.
 
 ```java
 package expression.extended.evaluate;
@@ -199,8 +195,7 @@ public interface ExpressionExtendedPrint extends Expression_extendedAlgebra<Prin
 | Project                                  | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | [expression.model](./expression.model)   | Base model (const, +)                    |
-| [expression.evaluate](./expression.evaluate) | Evaluation semantic based on the base model |
+| [expression.evaluate](./expression.evaluate) | Evaluation semantics based on the base model |
 | [expression-extended.model](./expression-extended.model) | Extended model (\*)                      |
-| [expression-extended.evaluate](./expression-extended.evaluate) | Evaluation semantic based on the extended model |
-| [expression-extended.print](./expression-extended.print) | Print semantic based on the extended model |
-
+| [expression-extended.evaluate](./expression-extended.evaluate) | Evaluation semantics based on the extended model |
+| [expression-extended.print](./expression-extended.print) | Print semantics based on the extended model |

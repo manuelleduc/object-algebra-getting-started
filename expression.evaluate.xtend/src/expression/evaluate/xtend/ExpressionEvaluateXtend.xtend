@@ -1,7 +1,7 @@
 package expression.evaluate.xtend
 
+import expression.Add
 import expression.Constant
-import expression.Sum
 import expression.algebra.ExpressionAlgebra
 
 interface ExpressionEvaluateXtend extends ExpressionAlgebra<EvaluateOperationXtend> {
@@ -9,7 +9,7 @@ interface ExpressionEvaluateXtend extends ExpressionAlgebra<EvaluateOperationXte
 		[constant.value]
 	}
 
-	override def sum(Sum sum) {
+	override def add(Add sum) {
 		[$(sum.left).evaluate + $(sum.right).evaluate]
 	}
 }

@@ -3,48 +3,35 @@
 package expression.provider;
 
 
+import expression.Add;
 import expression.ExpressionFactory;
 import expression.ExpressionPackage;
-import expression.Sum;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link expression.Sum} object.
+ * This is the item provider adapter for a {@link expression.Add} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SumItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class AddItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SumItemProvider(AdapterFactory adapterFactory) {
+	public AddItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,8 +62,8 @@ public class SumItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExpressionPackage.Literals.SUM__LEFT);
-			childrenFeatures.add(ExpressionPackage.Literals.SUM__RIGHT);
+			childrenFeatures.add(ExpressionPackage.Literals.ADD__LEFT);
+			childrenFeatures.add(ExpressionPackage.Literals.ADD__RIGHT);
 		}
 		return childrenFeatures;
 	}
@@ -95,14 +82,14 @@ public class SumItemProvider
 	}
 
 	/**
-	 * This returns Sum.gif.
+	 * This returns Add.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Sum"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Add"));
 	}
 
 	/**
@@ -113,7 +100,7 @@ public class SumItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Sum_type");
+		return getString("_UI_Add_type");
 	}
 	
 
@@ -128,9 +115,9 @@ public class SumItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Sum.class)) {
-			case ExpressionPackage.SUM__LEFT:
-			case ExpressionPackage.SUM__RIGHT:
+		switch (notification.getFeatureID(Add.class)) {
+			case ExpressionPackage.ADD__LEFT:
+			case ExpressionPackage.ADD__RIGHT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,23 +137,23 @@ public class SumItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.SUM__LEFT,
+				(ExpressionPackage.Literals.ADD__LEFT,
 				 ExpressionFactory.eINSTANCE.createConstant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.SUM__LEFT,
-				 ExpressionFactory.eINSTANCE.createSum()));
+				(ExpressionPackage.Literals.ADD__LEFT,
+				 ExpressionFactory.eINSTANCE.createAdd()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.SUM__RIGHT,
+				(ExpressionPackage.Literals.ADD__RIGHT,
 				 ExpressionFactory.eINSTANCE.createConstant()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.SUM__RIGHT,
-				 ExpressionFactory.eINSTANCE.createSum()));
+				(ExpressionPackage.Literals.ADD__RIGHT,
+				 ExpressionFactory.eINSTANCE.createAdd()));
 	}
 
 	/**
@@ -181,8 +168,8 @@ public class SumItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ExpressionPackage.Literals.SUM__LEFT ||
-			childFeature == ExpressionPackage.Literals.SUM__RIGHT;
+			childFeature == ExpressionPackage.Literals.ADD__LEFT ||
+			childFeature == ExpressionPackage.Literals.ADD__RIGHT;
 
 		if (qualify) {
 			return getString
@@ -190,17 +177,6 @@ public class SumItemProvider
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ExpressionEditPlugin.INSTANCE;
 	}
 
 }

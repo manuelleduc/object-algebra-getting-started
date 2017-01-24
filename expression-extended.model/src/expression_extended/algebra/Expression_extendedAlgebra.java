@@ -8,13 +8,11 @@ public interface Expression_extendedAlgebra<A> extends ExpressionAlgebra<A> {
 
 	A multiply(final Multiply multiply);
 
-	public default A $(final Expression expression) {
-		final A ret;
-		if (expression.eClass().getName().equals("Multiply")) {
-			ret = this.multiply((Multiply) expression);
+	default A $(final Expression expression) {
+		if (expression instanceof Multiply) {
+			return this.multiply((Multiply) expression);
 		} else {
-			ret = ExpressionAlgebra.super.$(expression);
+			return ExpressionAlgebra.super.$(expression);
 		}
-		return ret;
 	}
 }

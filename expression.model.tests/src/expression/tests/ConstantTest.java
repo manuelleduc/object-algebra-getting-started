@@ -4,9 +4,6 @@ package expression.tests;
 
 import expression.Constant;
 import expression.ExpressionFactory;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConstantTest extends TestCase {
-
-	/**
-	 * The fixture for this Constant test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Constant fixture = null;
+public class ConstantTest extends ExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class ConstantTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Constant test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Constant fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Constant test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Constant getFixture() {
-		return fixture;
+		return (Constant)fixture;
 	}
 
 	/**

@@ -1,9 +1,7 @@
 package expression.extended.print;
 
-import java.text.MessageFormat;
-
+import expression.Add;
 import expression.Constant;
-import expression.Sum;
 import expression_extended.Multiply;
 import expression_extended.algebra.Expression_extendedAlgebra;
 
@@ -15,13 +13,13 @@ public interface ExpressionExtendedPrint extends Expression_extendedAlgebra<Prin
 	}
 
 	@Override
-	default PrintOperation sum(Sum sum) {
-		return () -> MessageFormat.format("({0} + {1})", $(sum.getLeft()).print(), $(sum.getRight()).print());
+	default PrintOperation add(Add sum) {
+		return () -> "(" + $(sum.getLeft()).print() + " + " + $(sum.getRight()).print() + ")";
 	}
 
 	@Override
 	default PrintOperation multiply(Multiply multiply) {
-		return () -> MessageFormat.format("{0} * {1}", $(multiply.getLeft()).print(), $(multiply.getRight()).print());
+		return () -> $(multiply.getLeft()).print() + " + " + $(multiply.getRight()).print();
 	}
 
 }

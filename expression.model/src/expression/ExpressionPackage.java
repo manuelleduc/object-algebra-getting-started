@@ -57,10 +57,10 @@ public interface ExpressionPackage extends EPackage {
 	ExpressionPackage eINSTANCE = expression.impl.ExpressionPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link expression.Expression <em>Expression</em>}' class.
+	 * The meta object id for the '{@link expression.impl.ExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see expression.Expression
+	 * @see expression.impl.ExpressionImpl
 	 * @see expression.impl.ExpressionPackageImpl#getExpression()
 	 * @generated
 	 */
@@ -122,14 +122,14 @@ public interface ExpressionPackage extends EPackage {
 	int CONSTANT_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link expression.impl.SumImpl <em>Sum</em>}' class.
+	 * The meta object id for the '{@link expression.impl.AddImpl <em>Add</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see expression.impl.SumImpl
-	 * @see expression.impl.ExpressionPackageImpl#getSum()
+	 * @see expression.impl.AddImpl
+	 * @see expression.impl.ExpressionPackageImpl#getAdd()
 	 * @generated
 	 */
-	int SUM = 2;
+	int ADD = 2;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -138,7 +138,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUM__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+	int ADD__LEFT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -147,26 +147,25 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUM__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+	int ADD__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Sum</em>' class.
+	 * The number of structural features of the '<em>Add</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUM_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int ADD_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Sum</em>' class.
+	 * The number of operations of the '<em>Add</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUM_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
+	int ADD_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link expression.Expression <em>Expression</em>}'.
@@ -200,36 +199,36 @@ public interface ExpressionPackage extends EPackage {
 	EAttribute getConstant_Value();
 
 	/**
-	 * Returns the meta object for class '{@link expression.Sum <em>Sum</em>}'.
+	 * Returns the meta object for class '{@link expression.Add <em>Add</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sum</em>'.
-	 * @see expression.Sum
+	 * @return the meta object for class '<em>Add</em>'.
+	 * @see expression.Add
 	 * @generated
 	 */
-	EClass getSum();
+	EClass getAdd();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link expression.Sum#getLeft <em>Left</em>}'.
+	 * Returns the meta object for the containment reference '{@link expression.Add#getLeft <em>Left</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Left</em>'.
-	 * @see expression.Sum#getLeft()
-	 * @see #getSum()
+	 * @see expression.Add#getLeft()
+	 * @see #getAdd()
 	 * @generated
 	 */
-	EReference getSum_Left();
+	EReference getAdd_Left();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link expression.Sum#getRight <em>Right</em>}'.
+	 * Returns the meta object for the containment reference '{@link expression.Add#getRight <em>Right</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Right</em>'.
-	 * @see expression.Sum#getRight()
-	 * @see #getSum()
+	 * @see expression.Add#getRight()
+	 * @see #getAdd()
 	 * @generated
 	 */
-	EReference getSum_Right();
+	EReference getAdd_Right();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -255,10 +254,10 @@ public interface ExpressionPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link expression.Expression <em>Expression</em>}' class.
+		 * The meta object literal for the '{@link expression.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see expression.Expression
+		 * @see expression.impl.ExpressionImpl
 		 * @see expression.impl.ExpressionPackageImpl#getExpression()
 		 * @generated
 		 */
@@ -283,14 +282,14 @@ public interface ExpressionPackage extends EPackage {
 		EAttribute CONSTANT__VALUE = eINSTANCE.getConstant_Value();
 
 		/**
-		 * The meta object literal for the '{@link expression.impl.SumImpl <em>Sum</em>}' class.
+		 * The meta object literal for the '{@link expression.impl.AddImpl <em>Add</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see expression.impl.SumImpl
-		 * @see expression.impl.ExpressionPackageImpl#getSum()
+		 * @see expression.impl.AddImpl
+		 * @see expression.impl.ExpressionPackageImpl#getAdd()
 		 * @generated
 		 */
-		EClass SUM = eINSTANCE.getSum();
+		EClass ADD = eINSTANCE.getAdd();
 
 		/**
 		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -298,7 +297,7 @@ public interface ExpressionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUM__LEFT = eINSTANCE.getSum_Left();
+		EReference ADD__LEFT = eINSTANCE.getAdd_Left();
 
 		/**
 		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -306,7 +305,7 @@ public interface ExpressionPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUM__RIGHT = eINSTANCE.getSum_Right();
+		EReference ADD__RIGHT = eINSTANCE.getAdd_Right();
 
 	}
 

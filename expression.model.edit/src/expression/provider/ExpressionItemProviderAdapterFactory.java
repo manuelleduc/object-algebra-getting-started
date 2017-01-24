@@ -95,26 +95,26 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link expression.Sum} instances.
+	 * This keeps track of the one adapter used for all {@link expression.Add} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SumItemProvider sumItemProvider;
+	protected AddItemProvider addItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link expression.Sum}.
+	 * This creates an adapter for a {@link expression.Add}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSumAdapter() {
-		if (sumItemProvider == null) {
-			sumItemProvider = new SumItemProvider(this);
+	public Adapter createAddAdapter() {
+		if (addItemProvider == null) {
+			addItemProvider = new AddItemProvider(this);
 		}
 
-		return sumItemProvider;
+		return addItemProvider;
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	 */
 	public void dispose() {
 		if (constantItemProvider != null) constantItemProvider.dispose();
-		if (sumItemProvider != null) sumItemProvider.dispose();
+		if (addItemProvider != null) addItemProvider.dispose();
 	}
 
 }

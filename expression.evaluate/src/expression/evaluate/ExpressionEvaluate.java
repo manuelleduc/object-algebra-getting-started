@@ -1,6 +1,7 @@
 package expression.evaluate;
 
-import expression.*;
+import expression.Add;
+import expression.Constant;
 import expression.algebra.ExpressionAlgebra;
 
 public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation> {
@@ -16,7 +17,7 @@ public interface ExpressionEvaluate extends ExpressionAlgebra<EvaluateOperation>
 	}
 
 	@Override
-	default EvaluateOperation sum(final Sum sum) {
+	default EvaluateOperation add(final Add sum) {
 		return new EvaluateOperation() {
 
 			@Override

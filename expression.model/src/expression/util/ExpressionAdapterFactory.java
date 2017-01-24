@@ -76,8 +76,8 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createConstantAdapter();
 			}
 			@Override
-			public Adapter caseSum(Sum object) {
-				return createSumAdapter();
+			public Adapter caseAdd(Add object) {
+				return createAddAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -128,16 +128,16 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link expression.Sum <em>Sum</em>}'.
+	 * Creates a new adapter for an object of class '{@link expression.Add <em>Add</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see expression.Sum
+	 * @see expression.Add
 	 * @generated
 	 */
-	public Adapter createSumAdapter() {
+	public Adapter createAddAdapter() {
 		return null;
 	}
 

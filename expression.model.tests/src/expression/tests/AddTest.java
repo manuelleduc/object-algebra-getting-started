@@ -2,28 +2,18 @@
  */
 package expression.tests;
 
+import expression.Add;
 import expression.ExpressionFactory;
-import expression.Sum;
-
-import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Sum</b></em>'.
+ * A test case for the model object '<em><b>Add</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class SumTest extends TestCase {
-
-	/**
-	 * The fixture for this Sum test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Sum fixture = null;
+public class AddTest extends ExpressionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,37 +21,28 @@ public class SumTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(SumTest.class);
+		TestRunner.run(AddTest.class);
 	}
 
 	/**
-	 * Constructs a new Sum test case with the given name.
+	 * Constructs a new Add test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SumTest(String name) {
+	public AddTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Sum test case.
+	 * Returns the fixture for this Add test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Sum fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
-	 * Returns the fixture for this Sum test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Sum getFixture() {
-		return fixture;
+	@Override
+	protected Add getFixture() {
+		return (Add)fixture;
 	}
 
 	/**
@@ -72,7 +53,7 @@ public class SumTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ExpressionFactory.eINSTANCE.createSum());
+		setFixture(ExpressionFactory.eINSTANCE.createAdd());
 	}
 
 	/**
@@ -86,4 +67,4 @@ public class SumTest extends TestCase {
 		setFixture(null);
 	}
 
-} //SumTest
+} //AddTest

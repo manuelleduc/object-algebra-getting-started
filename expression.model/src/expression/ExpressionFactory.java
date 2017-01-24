@@ -31,13 +31,13 @@ public interface ExpressionFactory extends EFactory {
 	Constant createConstant();
 
 	/**
-	 * Returns a new object of class '<em>Sum</em>'.
+	 * Returns a new object of class '<em>Add</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sum</em>'.
+	 * @return a new object of class '<em>Add</em>'.
 	 * @generated
 	 */
-	Sum createSum();
+	Add createAdd();
 
 	/**
 	 * Returns the package supported by this factory.

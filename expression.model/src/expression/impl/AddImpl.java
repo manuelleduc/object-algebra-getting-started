@@ -2,33 +2,33 @@
  */
 package expression.impl;
 
+import expression.Add;
 import expression.Expression;
 import expression.ExpressionPackage;
-import expression.Sum;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sum</b></em>'.
+ * An implementation of the model object '<em><b>Add</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link expression.impl.SumImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link expression.impl.SumImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link expression.impl.AddImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link expression.impl.AddImpl#getRight <em>Right</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
+public class AddImpl extends ExpressionImpl implements Add {
 	/**
 	 * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -38,6 +38,7 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	 * @ordered
 	 */
 	protected Expression left;
+
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -53,7 +54,7 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SumImpl() {
+	protected AddImpl() {
 		super();
 	}
 
@@ -64,7 +65,7 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionPackage.Literals.SUM;
+		return ExpressionPackage.Literals.ADD;
 	}
 
 	/**
@@ -85,7 +86,7 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 		Expression oldLeft = left;
 		left = newLeft;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.SUM__LEFT, oldLeft, newLeft);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.ADD__LEFT, oldLeft, newLeft);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -100,14 +101,14 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
 			if (left != null)
-				msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.SUM__LEFT, null, msgs);
+				msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.ADD__LEFT, null, msgs);
 			if (newLeft != null)
-				msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.SUM__LEFT, null, msgs);
+				msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.ADD__LEFT, null, msgs);
 			msgs = basicSetLeft(newLeft, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.SUM__LEFT, newLeft, newLeft));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.ADD__LEFT, newLeft, newLeft));
 	}
 
 	/**
@@ -128,7 +129,7 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 		Expression oldRight = right;
 		right = newRight;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.SUM__RIGHT, oldRight, newRight);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.ADD__RIGHT, oldRight, newRight);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -143,14 +144,14 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 		if (newRight != right) {
 			NotificationChain msgs = null;
 			if (right != null)
-				msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.SUM__RIGHT, null, msgs);
+				msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.ADD__RIGHT, null, msgs);
 			if (newRight != null)
-				msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.SUM__RIGHT, null, msgs);
+				msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.ADD__RIGHT, null, msgs);
 			msgs = basicSetRight(newRight, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.SUM__RIGHT, newRight, newRight));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.ADD__RIGHT, newRight, newRight));
 	}
 
 	/**
@@ -161,9 +162,9 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExpressionPackage.SUM__LEFT:
+			case ExpressionPackage.ADD__LEFT:
 				return basicSetLeft(null, msgs);
-			case ExpressionPackage.SUM__RIGHT:
+			case ExpressionPackage.ADD__RIGHT:
 				return basicSetRight(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -177,9 +178,9 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionPackage.SUM__LEFT:
+			case ExpressionPackage.ADD__LEFT:
 				return getLeft();
-			case ExpressionPackage.SUM__RIGHT:
+			case ExpressionPackage.ADD__RIGHT:
 				return getRight();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -193,10 +194,10 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionPackage.SUM__LEFT:
+			case ExpressionPackage.ADD__LEFT:
 				setLeft((Expression)newValue);
 				return;
-			case ExpressionPackage.SUM__RIGHT:
+			case ExpressionPackage.ADD__RIGHT:
 				setRight((Expression)newValue);
 				return;
 		}
@@ -211,10 +212,10 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.SUM__LEFT:
+			case ExpressionPackage.ADD__LEFT:
 				setLeft((Expression)null);
 				return;
-			case ExpressionPackage.SUM__RIGHT:
+			case ExpressionPackage.ADD__RIGHT:
 				setRight((Expression)null);
 				return;
 		}
@@ -229,12 +230,12 @@ public class SumImpl extends MinimalEObjectImpl.Container implements Sum {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.SUM__LEFT:
+			case ExpressionPackage.ADD__LEFT:
 				return left != null;
-			case ExpressionPackage.SUM__RIGHT:
+			case ExpressionPackage.ADD__RIGHT:
 				return right != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SumImpl
+} //AddImpl

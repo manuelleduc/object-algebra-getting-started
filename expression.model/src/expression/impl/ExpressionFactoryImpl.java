@@ -57,7 +57,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ExpressionPackage.CONSTANT: return createConstant();
-			case ExpressionPackage.SUM: return createSum();
+			case ExpressionPackage.ADD: return createAdd();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,9 +78,9 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sum createSum() {
-		SumImpl sum = new SumImpl();
-		return sum;
+	public Add createAdd() {
+		AddImpl add = new AddImpl();
+		return add;
 	}
 
 	/**

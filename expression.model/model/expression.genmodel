@@ -10,9 +10,9 @@
     <genClasses ecoreClass="expression.ecore#//Constant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Constant/value"/>
     </genClasses>
-    <genClasses ecoreClass="expression.ecore#//Sum">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//Sum/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//Sum/right"/>
+    <genClasses ecoreClass="expression.ecore#//Add">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//Add/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//Add/right"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
