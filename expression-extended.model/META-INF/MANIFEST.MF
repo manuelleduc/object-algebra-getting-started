@@ -16,5 +16,5 @@ Export-Package: expression,
  expression_extended.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- expression.model;bundle-version="0.1.0"
+ expression.model;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

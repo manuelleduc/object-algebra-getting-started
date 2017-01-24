@@ -57,10 +57,10 @@ public interface ExpressionPackage extends EPackage {
 	ExpressionPackage eINSTANCE = expression.impl.ExpressionPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link expression.Expression <em>Expression</em>}' class.
+	 * The meta object id for the '{@link expression.impl.ExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see expression.Expression
+	 * @see expression.impl.ExpressionImpl
 	 * @see expression.impl.ExpressionPackageImpl#getExpression()
 	 * @generated
 	 */
@@ -255,10 +255,10 @@ public interface ExpressionPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link expression.Expression <em>Expression</em>}' class.
+		 * The meta object literal for the '{@link expression.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see expression.Expression
+		 * @see expression.impl.ExpressionImpl
 		 * @see expression.impl.ExpressionPackageImpl#getExpression()
 		 * @generated
 		 */

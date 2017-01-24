@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see expression.ExpressionPackage#getExpression()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface Expression extends EObject {

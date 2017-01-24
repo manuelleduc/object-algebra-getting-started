@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated expression_extended -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="expression_extended.presentation.Expression_extendedModelWizardID"
+            name="%_UI_Expression_extendedModelWizard_label"
+            class="expression_extended.presentation.Expression_extendedModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Expression_extendedModelFile.gif">
+         <description>%_UI_Expression_extendedModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated expression_extended -->
+      <editor
+            id="expression_extended.presentation.Expression_extendedEditorID"
+            name="%_UI_Expression_extendedEditor_label"
+            icon="icons/full/obj16/Expression_extendedModelFile.gif"
+            extensions="expression_extended"
+            class="expression_extended.presentation.Expression_extendedEditor"
+            contributorClass="expression_extended.presentation.Expression_extendedActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated expression_extended -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="expression.presentation.ExpressionModelWizardID"
+            name="%_UI_ExpressionModelWizard_label"
+            class="expression.presentation.ExpressionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExpressionModelFile.gif">
+         <description>%_UI_ExpressionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated expression_extended -->
+      <editor
+            id="expression.presentation.ExpressionEditorID"
+            name="%_UI_ExpressionEditor_label"
+            icon="icons/full/obj16/ExpressionModelFile.gif"
+            extensions="expression"
+            class="expression.presentation.ExpressionEditor"
+            contributorClass="expression.presentation.ExpressionActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

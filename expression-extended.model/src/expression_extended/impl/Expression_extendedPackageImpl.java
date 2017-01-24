@@ -3,9 +3,7 @@
 package expression_extended.impl;
 
 import expression.ExpressionPackage;
-
 import expression.impl.ExpressionPackageImpl;
-
 import expression_extended.Expression_extendedFactory;
 import expression_extended.Expression_extendedPackage;
 import expression_extended.Multiply;

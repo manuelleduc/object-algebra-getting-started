@@ -4,6 +4,7 @@ package expression_extended.impl;
 
 import expression.Expression;
 
+import expression.impl.ExpressionImpl;
 import expression_extended.Expression_extendedPackage;
 import expression_extended.Multiply;
 
@@ -14,7 +15,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class MultiplyImpl extends MinimalEObjectImpl.Container implements Multiply {
+public class MultiplyImpl extends ExpressionImpl implements Multiply {
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
